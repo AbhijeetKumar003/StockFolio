@@ -1,4 +1,4 @@
-# StockPro
+# StocFolio
 
 A full-stack, real-time stock portfolio tracker — rebuilt from an academic
 Flask/MySQL mini-project into a modern, production-shaped app: React +
