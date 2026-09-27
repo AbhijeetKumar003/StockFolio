@@ -1,0 +1,24 @@
+{
+  "name": "stockfolio",
+  "version": "1.0.0",
+  "description": "A full-stack, real-time stock portfolio tracker — rebuilt from an academic Flask/MySQL mini-project into a modern, production-shaped app: React + TypeScript frontend, Node/Express + TypeScript API, live price streaming over WebSockets, and real market data (NSE, BSE and US tickers) with no paid API key required.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "concurrently \"npm run dev --prefix backend\" \"npm run dev --prefix frontend\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbhijeetKumar003/StockFolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbhijeetKumar003/StockFolio/issues"
+  },
+  "homepage": "https://github.com/AbhijeetKumar003/StockFolio#readme",
+  "devDependencies": {
+    "concurrently": "^10.0.5"
+  }
+}
