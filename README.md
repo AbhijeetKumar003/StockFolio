@@ -1,4 +1,4 @@
-# StocFolio
+# StockFolio
 
 A full-stack, real-time stock portfolio tracker — rebuilt from an academic
 Flask/MySQL mini-project into a modern, production-shaped app: React +
@@ -21,13 +21,15 @@ Bootstrap UI. This rebuild:
 - Uses **yahoo-finance2** for free real-time quotes, intraday charts and
   ticker search (Indian tickers need a `.NS`/`.BO` suffix, e.g. `TCS.NS`,
   `RELIANCE.BO`; US tickers work as-is, e.g. `AAPL`).
+- Includes a day/night theme toggle (follows your system setting by default) and a
+  StockFolio logo and favicon.
 - Ships a distinct, Groww-style UI: a dedicated design system (see
   `frontend/tailwind.config.js`), not default Bootstrap styling.
 
 ## Project structure
 
 ```
-stockpro/
+stockfolio/
   backend/     Express + TypeScript API, SQLite storage, Socket.IO price stream
   frontend/    React + TypeScript + Tailwind app (Vite)
 ```
@@ -51,7 +53,7 @@ npm install
 npm run dev
 ```
 
-The API starts on `http://localhost:4000`. It creates `backend/data/stockpro.db`
+The API starts on `http://localhost:4000`. It creates `backend/data/stockfolio.db`
 automatically on first run.
 
 ## 2. Run the frontend

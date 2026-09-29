@@ -7,6 +7,7 @@ import { Explore } from './pages/Explore';
 import { Portfolio } from './pages/Portfolio';
 import { Watchlist } from './pages/Watchlist';
 import { StockDetail } from './pages/StockDetail';
+import { NotFound } from './pages/NotFound';
 import { ProtectedRoute } from './components/ProtectedRoute';
 
 export default function App() {
@@ -55,6 +56,7 @@ export default function App() {
           </ProtectedRoute>
         }
       />
+      <Route path="*" element={<NotFound />} />
     </Routes>
   );
 }

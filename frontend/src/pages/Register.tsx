@@ -1,6 +1,8 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Logo } from '../components/Logo';
+import { PublicLayout } from '../components/PublicLayout';
 
 export function Register() {
   const { register } = useAuth();
@@ -26,12 +28,12 @@ export function Register() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-paper px-4">
-      <div className="w-full max-w-sm">
+    <PublicLayout>
+      <div className="mx-auto w-full max-w-sm">
         <Link to="/" className="mb-8 block text-center font-display text-2xl font-semibold tracking-tight">
-          Stock<span className="text-brand">Pro</span>
+          <Logo size={32} />
         </Link>
-        <div className="rounded-card border border-line bg-surface p-8">
+        <div className="rounded-card border border-line bg-surface p-8 shadow-lg shadow-brand/5">
           <h1 className="font-display text-xl font-semibold">Create your account</h1>
           <p className="mt-1 text-sm text-muted">Track holdings and live prices in one place.</p>
 
@@ -73,7 +75,7 @@ export function Register() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-card bg-ink py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+              className="w-full rounded-card bg-ink py-2.5 text-sm font-medium text-paper transition-opacity hover:opacity-90 disabled:opacity-50"
             >
               {loading ? 'Creating account…' : 'Create account'}
             </button>
@@ -86,6 +88,6 @@ export function Register() {
           </Link>
         </p>
       </div>
-    </div>
+    </PublicLayout>
   );
 }

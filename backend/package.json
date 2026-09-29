@@ -1,7 +1,7 @@
 {
-  "name": "stockpro-api",
+  "name": "stockfolio-api",
   "version": "1.0.0",
-  "description": "StockPro API - real-time portfolio and market data backend",
+  "description": "StockFolio API - real-time portfolio and market data backend",
   "main": "dist/index.js",
   "type": "commonjs",
   "scripts": {

@@ -2,12 +2,48 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --c-ink: 18 21 28;
+  --c-paper: 250 250 247;
+  --c-surface: 255 255 255;
+  --c-brand: 14 124 90;
+  --c-brand-dark: 11 95 69;
+  --c-brand-light: 230 244 238;
+  --c-loss: 214 69 61;
+  --c-loss-light: 251 234 233;
+  --c-line: 230 228 221;
+  --c-muted: 107 114 128;
+  color-scheme: light;
+}
+
+.dark {
+  --c-ink: 232 236 241;
+  --c-paper: 10 14 19;
+  --c-surface: 18 25 33;
+  --c-brand: 24 176 126;
+  --c-brand-dark: 86 224 168;
+  --c-brand-light: 16 44 36;
+  --c-loss: 240 98 90;
+  --c-loss-light: 52 24 26;
+  --c-line: 35 46 58;
+  --c-muted: 139 151 166;
+  color-scheme: dark;
+}
+
 @layer base {
   html {
     font-feature-settings: 'tnum' 1, 'cv11' 1;
   }
   body {
     -webkit-font-smoothing: antialiased;
+    transition: background-color .25s ease, color .25s ease;
+  }
+  input, select, textarea {
+    background-color: rgb(var(--c-surface));
+    color: rgb(var(--c-ink));
+  }
+  input::placeholder {
+    color: rgb(var(--c-muted) / .7);
   }
   h1, h2, h3, h4 {
     font-family: theme('fontFamily.display');
@@ -18,4 +54,11 @@
   .tabular-nums {
     font-variant-numeric: tabular-nums;
   }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float, .animate-float-slow, .animate-draw, .animate-fade-up {
+    animation: none !important;
+  }
+  .draw-line { stroke-dashoffset: 0 !important; }
 }

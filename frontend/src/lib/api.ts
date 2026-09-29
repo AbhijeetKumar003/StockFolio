@@ -5,7 +5,7 @@ const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
 export const api = axios.create({ baseURL: `${API_URL}/api` });
 
 api.interceptors.request.use((config) => {
-  const token = localStorage.getItem('stockpro_token');
+  const token = localStorage.getItem('stockfolio_token');
   if (token) config.headers.Authorization = `Bearer ${token}`;
   return config;
 });
@@ -14,8 +14,8 @@ api.interceptors.response.use(
   (res) => res,
   (err) => {
     if (err.response?.status === 401) {
-      localStorage.removeItem('stockpro_token');
-      localStorage.removeItem('stockpro_user');
+      localStorage.removeItem('stockfolio_token');
+      localStorage.removeItem('stockfolio_user');
       if (!window.location.pathname.startsWith('/login')) {
         window.location.href = '/login';
       }

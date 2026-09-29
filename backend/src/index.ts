@@ -38,5 +38,5 @@ attachPriceStream(io);
 
 const port = Number(process.env.PORT) || 4000;
 server.listen(port, () => {
-  console.log(`StockPro API listening on http://localhost:${port}`);
+  console.log(`StockFolio API listening on http://localhost:${port}`);
 });

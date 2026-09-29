@@ -19,13 +19,13 @@ const AuthContext = createContext<AuthContextValue | undefined>(undefined);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [user, setUser] = useState<User | null>(() => {
-    const raw = localStorage.getItem('stockpro_user');
+    const raw = localStorage.getItem('stockfolio_user');
     return raw ? JSON.parse(raw) : null;
   });
 
   function persist(token: string, user: User) {
-    localStorage.setItem('stockpro_token', token);
-    localStorage.setItem('stockpro_user', JSON.stringify(user));
+    localStorage.setItem('stockfolio_token', token);
+    localStorage.setItem('stockfolio_user', JSON.stringify(user));
     setUser(user);
   }
 
@@ -48,8 +48,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   function logout() {
-    localStorage.removeItem('stockpro_token');
-    localStorage.removeItem('stockpro_user');
+    localStorage.removeItem('stockfolio_token');
+    localStorage.removeItem('stockfolio_user');
     setUser(null);
   }
 

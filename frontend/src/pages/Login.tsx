@@ -1,6 +1,8 @@
 import { FormEvent, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { Logo } from '../components/Logo';
+import { PublicLayout } from '../components/PublicLayout';
 
 export function Login() {
   const { login } = useAuth();
@@ -25,12 +27,12 @@ export function Login() {
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-paper px-4">
-      <div className="w-full max-w-sm">
+    <PublicLayout>
+      <div className="mx-auto w-full max-w-sm">
         <Link to="/" className="mb-8 block text-center font-display text-2xl font-semibold tracking-tight">
-          Stock<span className="text-brand">Pro</span>
+          <Logo size={32} />
         </Link>
-        <div className="rounded-card border border-line bg-surface p-8">
+        <div className="rounded-card border border-line bg-surface p-8 shadow-lg shadow-brand/5">
           <h1 className="font-display text-xl font-semibold">Welcome back</h1>
           <p className="mt-1 text-sm text-muted">Sign in to see your live portfolio.</p>
 
@@ -61,19 +63,19 @@ export function Login() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full rounded-card bg-ink py-2.5 text-sm font-medium text-white transition-opacity hover:opacity-90 disabled:opacity-50"
+              className="w-full rounded-card bg-ink py-2.5 text-sm font-medium text-paper transition-opacity hover:opacity-90 disabled:opacity-50"
             >
               {loading ? 'Signing in…' : 'Sign in'}
             </button>
           </form>
         </div>
         <p className="mt-6 text-center text-sm text-muted">
-          New to StockPro?{' '}
+          New to StockFolio?{' '}
           <Link to="/register" className="font-medium text-brand">
             Create an account
           </Link>
         </p>
       </div>
-    </div>
+    </PublicLayout>
   );
 }
